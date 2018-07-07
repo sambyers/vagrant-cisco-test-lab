@@ -1,4 +1,4 @@
-# dirty hack to get a build icon on the README without exposing internal jenkins server to internet.
+# dirty hack to get a build icon on the README without exposing internal testing server to internet.
 import argparse
 
 parser = argparse.ArgumentParser(description="Process configurations and integrate them into a VIRL file.")
