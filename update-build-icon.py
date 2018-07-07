@@ -7,12 +7,12 @@ args = parser.parse_args()
 failed = args.failed
 
 with open('README.md', 'r') as file :
-  filedata = file.read()
-print(filedata)
+  readme_data = file.read()
+print(readme_data)
 if failed:
-    filedata = filedata.replace('passing.svg', 'failing.svg')
+    readme_data = readme_data.replace('passing.svg', 'failing.svg')
 else:
-    filedata = filedata.replace('failing.svg', 'passing.svg')
+    readme_data = readme_data.replace('failing.svg', 'passing.svg')
 
 with open('README.md', 'w') as file:
-  file.write(filedata)
+  file.write(readme_data)
