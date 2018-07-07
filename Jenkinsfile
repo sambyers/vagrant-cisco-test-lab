@@ -22,6 +22,9 @@ pipeline {
         always {
             echo 'Destroying vagrant VMs...'
             sh 'vagrant destroy -f'
+            sh 'git add .'
+            sh 'git commit -m "jenkins post test"'
+            sh 'git push -u origin master'
         }
         failure {
             sh 'python update-build-icon.py -f'
