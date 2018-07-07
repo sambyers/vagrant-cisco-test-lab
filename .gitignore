@@ -8,6 +8,7 @@ __pycache__/
 
 # VSCode
 .vscode
+update-build-icon.py
 
 # Vagrant
 .vagrant

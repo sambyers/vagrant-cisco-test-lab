@@ -1,12 +1,12 @@
 pipeline {
     agent any
     stages {
-        stage('Build') {
+        /*stage('Build') {
             steps {
                 sh 'vagrant up --destroy-on-error'
                 sh 'python build-templates.py'
             }
-        }
+        } */
         stage('Test') {
             steps {
                 sh 'python test-templates.py'
@@ -22,6 +22,9 @@ pipeline {
         always {
             echo 'Destroying vagrant VMs...'
             sh 'vagrant destroy -f'
+        }
+        failure {
+            sh 'python update-build-icon.py -f'
         }
     }
 }
