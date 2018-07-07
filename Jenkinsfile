@@ -18,4 +18,10 @@ pipeline {
             }
         }
     }
+    post {
+        always {
+            echo 'Destroying vagrant VMs...'
+            sh 'vagrant destroy -f'
+        }
+    }
 }
